@@ -53,6 +53,12 @@ body {
     font-size:20px;    
     font-weight:normal;
 }
+.something_to_say{
+    padding:20px 5px;
+    font-size:25px;
+    font-weight:normal;
+    color: navy;
+}
 .set-foot {
     padding:20px 5px;
 }
