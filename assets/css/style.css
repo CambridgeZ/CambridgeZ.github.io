@@ -1,4 +1,4 @@
-﻿
+
 /* =============================================================
    GENERAL STYLES
  ============================================================ */
@@ -55,9 +55,10 @@ body {
 }
 .something_to_say{
     padding:20px 5px;
-    font-size:25px;
+    font-size:19px;
     font-weight:normal;
-    color: navy;
+    color: #065883;
+    text-align: right;
 }
 .set-foot {
     padding:20px 5px;
