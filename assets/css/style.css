@@ -70,3 +70,26 @@ body {
 	font-size:0;
 	overflow:hidden;
 }
+
+.wrap{
+    border:0;
+    max-width:100% ;
+    max-height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap ul{
+    overflow: hidden;
+    position:absolute;
+    max-height: 100%;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    _height:1px;
+}
+
+.wrap ul li{
+    float: left;
+    width: 200px;
+}
