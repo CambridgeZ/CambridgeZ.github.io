@@ -1,393 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Website Title -->
     <title>独行侠，侠客行</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="favicon.ico">
-    <script src="script.js" rel="script"></script>
-    <style>
-        @keyframes remove {
-            100% {
-                opacity: 0;
-            }
-        }
+    <!-- Bootstrap -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font-Awesome -->
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Lightbox -->
+	<link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
+    <!-- Text Rotator-->
+	<link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
+	<!-- FlexSlider -->
+    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
+	<!-- Theme Style -->
+    <link href="css/style.css" rel="stylesheet">
+	<!-- Animations -->
+    <link href="css/animate.css" rel="stylesheet">
+	<!-- Custom Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.js"></script>
+    <script src="assets/respond/respond.min.js"></script>
+    <![endif]-->
+  </head>
+    <body id="top">
 
-        .text {
-            position: absolute;
-            z-index: 9999999;
-            font-weight: bold;
-            user-select: none;
-        }
-    </style>
-        </head>
-<body>
+      <!-- ****************************** Preloader ************************** -->
+      <div id="preloader"></div>
 
-    <section class="header-section"  style="background-image: url("")">
-        <div class="container">
+
+	  	<!-- ==========================
+        HEADER SECTION 
+        =========================== -->
+        <header id="home">
+		    <!-- creative menu -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="menu-wrap">
+				<nav class="menu">
+				    <!-- Menu Links -->
+					<div class="icon-list">
+						<a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+						<a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
+						<a href="index.html#service"><i class="fa fa-fw fa-globe"></i><span>Service</span></a>
+						<a href="index.html#portfolio"><i class="fa fa-fw fa-picture-o"></i><span>Portfolio</span></a>
+						<a href="index.html#blog"><i class="fa fa-fw fa-rss"></i><span>Blog</span></a>
+						<a href="index.html#contact"><i class="fa fa-fw fa-envelope-o"></i><span>Contact</span></a>
+					</div>
+				</nav>
+			    </div>
+			    <button class="menu-button" id="open-button"></button><!-- menu button -->
+              </div><!--/row-->
+            </div><!--/container-->
+		  <!-- Header Image -->
+          <section class="hero" id="hero">
+            <div class="container">
+			  <!-- Slider Button (don't edit!)-->
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="index.html#"><span></span></a>
+                </div>
+              </div>
+			  <!-- HEADER HEADLINE -->
+              <div class="row">
+                <div class="col-md-8 col-md-offset-1 inner">
+                  <h1 class="animated fadeInDown" style="color: whitesmoke">
+                    C<span style="color:#E04343;">a</span>mbridge<br/>
+                    <span>C<span style="color:#FFE800">h</span>ao</span>
+                  </h1><!-- Title -->
+                  <h3 class="animated fadeInUp delay-05s"><span class="rotate">独行侠 侠客行,Stay hungrey Stay foolish</span></h3><!-- Text Rotator -->
+                </div>
+              </div>
+			  <!-- Learn More Button -->
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <a href="index.html#about" class="scrollto wow fadeInUp delay-5s ">
+			            <p>SEE MORE</p>
+			            <p class="scrollto--arrow"><img src="img/scroll-down.png" alt="scroll down arrow"></p>
+			        </a>
+                </div>
+              </div>
+            </div>
+          </section>
+		  <!-- Header Image End -->
+        </header>
+		<!-- ==========================
+        HEADER SECTION END  
+        =========================== -->
+		
+		
+		
+		
+		<!-- ==========================
+        ABOUT SECTION  
+        =========================== -->
+        <section class="intro text-center section-padding color-bg" id="about">
+          <div class="container">
+		    <!-- WELCOME TEXT -->
             <div class="row">
-                <div class="col-md-2">
-                    <img src="assets/img/person.JPG" class="img-circle img-responsive" />
-                </div>
-                <div class="col-md-5 text-center">
-                    <h1><strong>独行侠</strong></h1>
-                    <h4>Stay Hungry, Stay foolish.</h4>
-                </div>
-                <br/>
-                <div class="col-md-5">
-                    <h3></h3><!--这里还可以加一个题注-->
-
-                    <br/>
-                </div>
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">有关于独行侠</h1><!-- Headline -->
+				<!-- about / welcome text -->
+                  <p>生活是一道二次函数,不管开口是向上还是向下总有高峰和低谷.</p>
+<!--                <p>I am enough of an artist to draw freely upon my imagination. The point is that when I see a sunset or a <a href="#">waterfall</a> or something, for a split second it's so great, because for a little bit I'm out of my brain, and it's got nothing to do with me. I'm not trying to figure it out, you know what I mean? And I wonder if I can somehow find a way to maintain that mind stillness.</p>-->
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!--HOME SECTION END-->
 
-    <hr />
-    <section>
-        <div class="container">
+
+
+<!-- ==========================
+        SERVICE SECTION 
+        =========================== -->
+        <section class="features text-center section-padding" id="service">
+          <div class="container">
+        <!-- Headline -->
             <div class="row">
-                <div class="col-md-9">
-                    <div class="blog-main">
-
-                        <div class="heading-blog">
-                            <a href="poem.html">
-                            诗歌与远方
-                        </div>
-                         <a href="poem.html">
-                        <img src="assets/img/1.jpg" class="img-responsive img-rounded" />
-                             </a>
-                        <div class="blog-info">
-                            <span class="label label-primary">Posted on 14th March 2022</span>
-                            <span class="label label-success">文学</span>
-                            <span class="label label-danger">zjq整理</span>
-                            <span class="label label-info">
-                                <i class="fa fa-thumbs-up"></i>0
-                        <i class="fa fa-thumbs-down"></i>0
-                            </span>
-                        </div>
-                        <div class="blog-txt">
-                            我要做远方忠诚的儿子
-                            <br />
-                            和物质短暂的情人
-                            <br/>
-                            和所有以梦为马的诗人一样
-                            <br/>
-                            我不得不和烈士和小丑走在同一道路上
-                            <br/>
-                            ......
-                        </div>
-                    </div>
-
-                    <br/>
-                <div class="blog-main">
-                    <div class="heading-blog">
-                        <a href="孤独之旅.html">
-                            孤独之旅
-                    </div>
-                    <a href="孤独之旅.html">
-                        <img src="assets/img/xinjiekou.jpeg" class="img-responsive img-rounded" />
-                    </a>
-                    <div class="blog-info">
-                        <span class="label label-primary">Written on 9th July 2019</span>
-                        <span class="label label-success">杂思</span>
-                        <span class="label label-danger">独行侠</span>
-                        <span class="label label-info">
-                                <i class="fa fa-thumbs-up"></i> 0
-                        <i class="fa fa-thumbs-down"></i>0
-                            </span>
-                    </div>
-                    <div class="blog-txt">
-                          我一次一次告诉自己“野兽大多独行，牛羊才成群结队。”“古来圣贤皆寂寞”“身体是孤独一点，至少灵魂是自由的”……<br/><br/>
-                          也许独行，并不算孤独。当我在总统府门口看着别人和我一样为白来一趟愤慨，在明城墙下听偷听别人的导游精彩的讲解，在新街口从人群中穿过……我甚至想到契科夫说过的“人应该在知识、在上帝面前感动渺小，而不是人群中，在人群中应该找到自己的尊严”，我想到了一个词语，一个我自认为可以加于我头上的词语——“独行侠”。一个穿梭在世俗中的，一个不染尘埃的独行侠，一个仗剑走天涯的侠客。
-                    </div>
-                </div>
-
-                <br/>
-                    <div class="blog-main">
-                        <div class="heading-blog">
-                            <a href="一个码农的成长之路.html">
-                                一份菜鸟的笔记
-                        </div>
-                        <a href="一个码农的成长之路.html">
-                            <img src="assets/img/milky-way-3840x2160-stars-4k-20311.jpg" class="img-responsive img-rounded" />
-
-                        </a>
-
-                        <div class="blog-info">
-                            <span class="label label-success">Computer Science</span>
-                            <span class="label label-danger">独行侠</span>
-                            <span class="label label-info">
-                                <i class="fa fa-thumbs-up"></i> 0
-                        <i class="fa fa-thumbs-down"></i>0
-                            </span>
-                        </div>
-                        <div class="blog-txt">
-                            平时上课用markdown随手记的笔记，就随便丢在这里了QwQ
-                        </div>
-                    </div>
-               <br/>
-            <div class="blog-main">
-                <div class="heading-blog">
-                    <a href="江畔夕阳.html">
-                        江畔夕阳
-                </div>
-                <a href="江畔夕阳.html">
-<!--                    <img src="assets/img/IMG_0556.JPG" class="img-responsive img-rounded" />-->
-                    <div id="div1">
-                        <div id="btn"> <a href="javascript:aa();">向左</a> <a href="javascript:aa();">向右</a> </div>
-                        <ul>
-                            <li><img src="assets/img/IMG_0569.JPG"></li>
-<!--                            <li><img src="assets/img/IMG_0567.JPG"></li>-->
-                            <li><img src="assets/img/IMG_0559.JPG"></li>
-<!--                            <li><img src="assets/img/IMG_0556.JPG"></li>-->
-                        </ul>
-                    </div>
-                </a>
-
-                <div class="blog-info">
-                    <span class="label label-primary">Written on 19th March 2022</span>
-                    <span class="label label-success">杂思</span>
-                    <span class="label label-danger">独行侠</span>
-                    <span class="label label-info">
-                                <i class="fa fa-thumbs-up"></i> 0
-                        <i class="fa fa-thumbs-down"></i>0
-                            </span>
-                </div>
-                <div class="blog-txt">
-                        我徜徉于落日大道<br/>
-                        走过长江之畔<br/>
-                </div>
+              <div class="col-md-12">
+                <h1 class="arrow">I do amazing things for myself</h1>
+              </div>
             </div>
-
-            <br/>
-
-                    <div class="blog-main">
-                        <div class="heading-blog">
-                            <a href="星.html">
-                                星
-                        </div>
-                        <a href="星.html">
-                                                <img src="assets/img/OIP-C.jpeg" class="img-responsive img-rounded" />
-                        </a>
-
-                        <div class="blog-info">
-                            <span class="label label-primary">Written on 20 April 2022</span>
-                            <span class="label label-success">诗歌</span>
-                            <span class="label label-danger">独行侠</span>
-                            <span class="label label-info">
-                                <i class="fa fa-thumbs-up"></i> 0
-                        <i class="fa fa-thumbs-down"></i>0
-                            </span>
-                        </div>
-                        <div class="blog-txt">
-
-                        </div>
+            <div class="row">
+              <div class="col-md-12">
+          <div class="services">
+          <!-- Service Box 1 -->
+                  <div class="col-md-4 wp2 item">
+                    <div class="icon">
+                      <i class="fa fa-camera"></i><!-- Icon -->
                     </div>
-                    <!--BLOG ONE END -->
-<!--                    <div class="blog-main">-->
-<!--                        <div class="heading-blog">-->
-<!--                            The security is main concern while developing applications-->
-<!--                        </div>-->
-<!--                         <a href="singlepost.html">-->
-<!--                        <img src="assets/img/2.jpg" class="img-responsive img-rounded" />-->
-<!--                             </a>-->
-<!--                        <div class="blog-info">-->
-<!--                            <span class="label label-primary">Posted on 26th November 2014</span>-->
-<!--                            <span class="label label-success">In Technology</span>-->
-<!--                            <span class="label label-danger">By Jhon</span>-->
-<!--                            <span class="label label-info">-->
-<!--                                <i class="fa fa-thumbs-up"></i>+ 10-->
-<!--                        <i class="fa fa-thumbs-down"></i>-3-->
-<!--                            </span>-->
-<!--                        </div>-->
-<!--                        <div class="blog-txt">-->
-<!--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
-<!--                        Fusce nec tellus non diam feugiat commodo. Sed auctor mauris a tristique imperdiet.-->
-<!--                        Nullam egestas sapien non lectus suscipit, quis tristique odio imperdiet.-->
-<!--                         Nullam elit lacus, tincidunt eget faucibus eget, vestibulum venenatis metus.-->
-<!--                        Praesent efficitur quam aliquam mauris sagittis, vel lacinia risus luctus. Ut vitae bibendum ipsum.-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                     &lt;!&ndash;BLOG TWO END &ndash;&gt;-->
-<!--                    <div class="blog-main">-->
-<!--                        <div class="heading-blog">-->
-<!--                            The security is main concern while developing applications-->
-<!--                        </div>-->
-<!--                        <a href="singlepost.html">-->
-<!--                        <img src="assets/img/3.jpg" class="img-responsive img-rounded" />-->
-<!--                            </a>-->
-<!--                        <div class="blog-info">-->
-<!--                            <span class="label label-primary">Posted on 26th November 2014</span>-->
-<!--                            <span class="label label-success">In Technology</span>-->
-<!--                            <span class="label label-danger">By Jhon</span>-->
-<!--                            <span class="label label-info">-->
-<!--                                <i class="fa fa-thumbs-up"></i>+ 10-->
-<!--                        <i class="fa fa-thumbs-down"></i>-3-->
-<!--                            </span>-->
-<!--                        </div>-->
-<!--                        <div class="blog-txt">-->
-<!--                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
-<!--                        Fusce nec tellus non diam feugiat commodo. Sed auctor mauris a tristique imperdiet.-->
-<!--                        Nullam egestas sapien non lectus suscipit, quis tristique odio imperdiet.-->
-<!--                         Nullam elit lacus, tincidunt eget faucibus eget, vestibulum venenatis metus.-->
-<!--                        Praesent efficitur quam aliquam mauris sagittis, vel lacinia risus luctus. Ut vitae bibendum ipsum.-->
-<!--                        </div>-->
-<!--                    </div>-->
-                     <!--BLOG THREE END -->
-                    <nav>
-                        <ul class="pagination">
-                            <li class="disabled"><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
-                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-                            <li><a href="page2.html">2 <span class="sr-only"></span></a></li>
-                            <li><a href="page3.html">3 <span class="sr-only"></span></a></li>
-                            <li><a href="page4.html">4 <span class="sr-only"></span></a></li>
-                            <li><a href="page5.html">5 <span class="sr-only"></span></a></li>
-                            <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
-                        </ul>
-                    </nav>
-                     <!--PAGING  END -->
-                </div>
-<!--                <div class="col-md-3">-->
-
-<!--                    <ul class="list-group">-->
-<!--                        <li class="list-group-item">-->
-<!--                            <strong>Main Categories</strong>-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">104</span>-->
-<!--                            Technology-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">34</span>-->
-<!--                            Blogging-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">10</span>-->
-<!--                            Information-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">50</span>-->
-<!--                            Security-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <strong>Other Categories</strong>-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">104</span>-->
-<!--                            Technology-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">34</span>-->
-<!--                            Blogging-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">10</span>-->
-<!--                            Information-->
-<!--                        </li>-->
-<!--                        <li class="list-group-item">-->
-<!--                            <span class="badge">50</span>-->
-<!--                            Security-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                    <br />-->
-
-                <br/>
-
-
-<!--                    <br />-->
-<!--                </div>-->
-
-
-
+                    <h2>Photographer</h2><!-- Title -->
+                    <p>抬头看天上的月亮</p><!-- Description -->
+                  </div>
+          <!-- Service Box 2 -->
+                  <div class="col-md-4 wp2 item delay-05s">
+                    <div class="icon">
+                      <i class="fa fa-desktop"></i><!-- Icon -->
+                    </div>
+                    <h2>Code</h2><!-- Title -->
+                    <p>捡起地上的六便士.</p><!-- Description -->
+                  </div>
+          <!-- Service Box 3 -->
+                  <div class="col-md-4 wp2 item delay-1s">
+                    <div class="icon">
+                      <i class="fa fa-cubes"></i><!-- Icon -->
+                    </div>
+                    <h2>Dream</h2><!-- Title -->
+                    <p>一直做梦,从不苏醒.</p><!-- Description -->
+                  </div>
+          </div>
+                  <div class="clearfix"></div>
+              </div>
             </div>
+          </div>
+        </section>
+
+
+
+
+
+		<div class="container-fluid">
+		    <!-- About 1 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url(img/about1.jpg)"></div><!-- about image 1 -->
+				</div>
+				<div class="col-md-6 about-text">
+					<h6>诗歌与远方</h6><!-- headline-->
+					<p>我要做远方忠诚的儿子<br>和物质短暂的情人<br>和所有以梦为马的诗人一样<br>我不得不和烈士和小丑走在同一条路上</p><br><!-- About Text 1 -->
+
+					<a href="poem.html" class="weight-outline-btn">Read more</a><!-- read more button  -->
+				</div>
+			</div>
+			<!-- About 2 -->
+			<div class="row">
+				<div class="col-md-6 about-text">
+					<h6>孤独之旅</h6><!-- Headline -->
+					<p> 我一次一次告诉自己“野兽大多独行，牛羊才成群结队。”“古来圣贤皆寂寞”“身体是孤独一点，至少灵魂是自由的”<br> 也许独行，并不算孤独。当我在总统府门口看着别人和我一样为白来一趟愤慨，在明城墙下听偷听别人的导游精彩的讲解，在新街口从人群中穿过……我甚至想到契科夫说过的“人应该在知识、在上帝面前感动渺小，而不是人群中，在人群中应该找到自己的尊严”，我想到了一个词语，一个我自认为可以加于我头上的词语——“独行侠”。一个穿梭在世俗中的，一个不染尘埃的独行侠，一个仗剑走天涯的侠客。</p><br><!-- About Text 2 -->
+					<a href="孤独之旅.html" class="weight-outline-btn">Read more</a>	<!-- read more button  -->
+				</div>
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url(img/about2.jpeg)"></div><!-- about image 2 -->
+				</div>
+			</div>
+			<!-- About 3 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url(img/about3.JPG)"></div><!-- about image 3 -->
+				</div>
+				<div class="col-md-6 about-text">
+					<h6>江畔夕照</h6><!-- Headline-->
+					<p>在封校的前后夹击当中偷得浮生半日闲，到长江边的鱼尾公园去看那看那天傍晚的落日。落日、长江，美好与美好在眼前盛放。</p><br><!-- About Text 3 -->
+					<a href="江畔夕阳.html" class="weight-outline-btn">Read more</a><!-- read more button  -->
+				</div>
+			</div>
+		</div>
+        <!--About 4-->
+      <div class="row">
+          <div class="col-md-6 about-text">
+              <h6>一些笔记</h6><!-- Headline -->
+              <p>上课的的时候随手用markdown记录的笔记,就随手丢在这里面了.</p><br><!-- About Text 2 -->
+              <a href="一个码农的成长之路.html" class="weight-outline-btn">Read more</a>	<!-- read more button  -->
+          </div>
+          <div class="col-md-6 nopadding features-intro-img">
+              <div class="about-image" style="background-image:url(img/about4.jpg)"></div><!-- about image 2 -->
+          </div>
+      </div>
+
+		<!-- ==========================
+        ABOUT SECTION END
+        =========================== -->	
+
+		
+		
+		
+		<!-- ==========================
+        PORTFOLIO SECTION
+    =========================== -->
+        <section class="swag text-center" id="portfolio">
+          <div class="container">
+		    <!-- Headline -->
+            <div class="row">
+              <h1 class="arrow">
+                Recent <span>Porojects</span>
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="row row-offset-0">
+  				 
+          <!-- PORTFOLIO ITEM 1 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-01-large.jpg" data-lightbox="roadtrip" title="Project One - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-01-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  	
+  	    <!-- PORTFOLIO ITEM 2 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-02-large.jpg" data-lightbox="roadtrip" title="Project Two - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-02-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					
+  		<!-- PORTFOLIO ITEM 3 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-03-large.jpg" data-lightbox="roadtrip" title="Project Three - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-03-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					
+  		<!-- PORTFOLIO ITEM 4 -->
+          <div class="col-md-3 col-sm-6 ">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-04-large.jpg" data-lightbox="roadtrip" title="Project Four - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-04-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  	             
+          <!-- PORTFOLIO ITEM 5 -->
+          <div class="col-md-3 col-sm-6 ">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-05-large.jpg" data-lightbox="roadtrip" title="Project Five - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-05-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  	
+  	    <!-- PORTFOLIO ITEM 6 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-06-large.jpg" data-lightbox="roadtrip" title="Project Six - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-06-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					
+  		<!-- PORTFOLIO ITEM 7 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-07-large.jpg" data-lightbox="roadtrip" title="Project Seven - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-07-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					
+  		<!-- PORTFOLIO ITEM 8 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="img/portfolio/portfolio-08-large.jpg" data-lightbox="roadtrip" title="Project Eight - Lorem Ipsum"><img class="grayscale" src="img/portfolio/portfolio-08-thumbnail.jpg" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+        </div><!--/row-->
+      </div><!--/.container-->
+		<!-- ==========================
+        PORTFOLIO SECTION END
+        =========================== -->
+			
+
+
+			
+		<!-- ==========================
+        CUSTOM SPACER
+        =========================== -->
+		<div class="spacer-cta text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="index.html#contact" class="outline-btn">hire john doe</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    <ul class="list-group">
-        <li class="list-group-item">友情链接
-        </li>
-        <li class="list-group-item">
-            <a href="https://florentino-73.github.io">florentino's blog </a>
+		<!-- ==========================
+        CUSTOM SPACER END
+        =========================== -->
+		
+		
 
-            <!--
-            <!-->
+    <!-- ==========================
+        BLOG SECTION 
+        =========================== -->
+    <section class="text-center section-padding" id="blog">
+          <div class="container">
+        <!-- Headline -->
+        <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">My <span>little</span> blog</h1>
+              </div>
+            </div><br><br>
+      
+      <!-- Blog Slider -->
+            <div class="row">
+              <div id="blogSlider">
+                <ul class="slides">
+                  <li>
+            <!-- Blog Entry 1 -->
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog1.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Minds</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
+                    </div>
+          <!-- Blog Entry 2 -->
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog2.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Hearts</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+          <!-- Blog Entry 3 -->
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog3.jpg"  class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Ideas</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
+                    </div>
+                  </li>
+                  <li>
+            <!-- Blog Entry 4 -->
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog1.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Minds</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+          <!-- Blog Entry 5 -->
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog2.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Hearts</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                    </div>
+          <!-- Blog Entry 6 -->
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="img/blog3.jpg" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+            <br>
+                      <h2>Creative Ideas</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    <!-- ==========================
+        BLOG SECTION END
+        =========================== -->
+    
+        
+		
+		<!-- ==========================
+        CLIENT SECTION 
+        =========================== -->
+		<div class="container-fluid">
+			<div class="row color-bg">
+				<!-- Left Image -->
+				<div class="col-md-6 nopadding features-intro-img wow fadeInLeft">
+					<div class="about-image" style="background-image:url(img/clients.png)"></div>
+				</div>
+				<!-- Clients / Testimonials -->
+				<div class="col-md-6 nopadding about-text">
+				<h6>What our clients said</h6>
+					<div id="clientSlider">
+					   <ul class="slides">
+					       <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Pete Rock, A New Tomorrow</small></p></li>
+						   <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Michael Snowden, Creativeland CEO</small></p></li>
+						  <li><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br>	<small>- Tom Davis, GreenWonder</small></p>	</li>
+					   </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ==========================
+        CLIENTS SECTION END
+        =========================== -->
+		
+		
+		
+		
+		
+		<!-- ==========================
+        NEWSLETTER SECTION 
+        =========================== -->
+        <section>
+		<div class="container-fluid">
+				<div class="row color-bg">
+				    <div class="col-md-6 nopadding subscribe text-center">
+					 <h1><i class="fa fa-paper-plane"></i><span>Subscribe our Newsletter</span></h1><!-- Heading -->
+                     <form action="index.html#">
+                       <input type="text" name="" value="" placeholder="" required><!-- E-Mail -->
+                       <input type="submit" name="" value="Send"><!-- Submit Button -->
+                    </form>   
+					</div>
+					<div class="col-md-6 nopadding features-intro-img">
+						 <div class="about-image" style="background-image:url(img/newsletter.png)"></div><!-- Right Image -->
+					</div>
+				</div>
+			</div>
+        </section>
+		<!-- ==========================
+        NEWSLETTER SECTION END
+        =========================== -->
 
-            <br />
-        </li>
-    </ul>
+		
+		
+		<!-- ==========================
+        CONTACT SECTION
+        =========================== -->
+        <section class="text-center section-padding contact-wrap" id="contact">
+		  <!-- To Top Button -->
+          <a href="index.html#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <div class="container">
+		    <!-- Headline -->
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Drop <span>me</span> a line</h1>
+              </div>
+            </div>
+            <div class="row contact-details">
+			  <!-- Adress Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
+                  <p>Nanjing</p>
+                </div>
+              </div>
+			  <!-- Phone Number Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
+                  <p>+86 </p>
+                </div>
+              </div>
+			  <!-- E-Mail Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                  <p><a href="index.html#">jianqiaozh@proton.me</a></p>
+                </div>
+              </div>
+            </div>
+			<div class="row">
+			  <!-- Google Maps (Change your Settings below) -->
+			  <div class="col-md-6">
+			    <div id="googlemaps"></div>
+			  </div>
+			  <!-- Contact Form -->
+			  <div class="col-md-6 contact">
+			     <form role="form">
+				            <!-- Name -->
+                            <div class="row">
+                                <div class="col-md-6">
+								    <!-- E-Mail -->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+								    <!-- Phone Number -->
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+							<!-- Message Area -->
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Write you message here..." style="height:232px;"></textarea>
+                            </div>
+							<!-- Subtmit Button -->
+                            <button type="submit" class="btn btn-send">
+                                Send message
+                            </button>
+                        </form>
+			  </div>
+			</div>
+			<br>
+			<!-- Social Buttons - use font-awesome, past in what you want -->
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="social-buttons">
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-dribbble"></i></a></li><!-- dribble -->
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-twitter"></i></a></li><!-- twitter -->
+                  <li><a href="index.html#" class="social-btn"><i class="fa fa-facebook"></i></a></li><!-- facebook -->
+				  <li><a href="index.html#" class="social-btn"><i class="fa fa-deviantart"></i></a></li><!-- deviantart -->
+				  <li><a href="index.html#" class="social-btn"><i class="fa fa-youtube"></i></a></li><!-- youtube -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+		<!-- ==========================
+        CONTACT SECTION END
+        =========================== -->
+		
+		
+		
+		<!-- ==========================
+        FOOTER SECTION
+        =========================== -->
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>All Rights Reserved. &copy; 2015 <a href="http://www.themewagon.com">ThemeWagon</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+		<!-- ==========================
+        FOOTER SECTION END
+        =========================== -->		
+		
+		
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- SmoothScroll -->           
+    <script type="text/javascript" src="assets/smoothscroll/smoothscroll.js"></script>
+    <!-- Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/waypoints.min.js"></script>
+    <!-- classie.js -->
+	<script src="js/classie.js"></script>
+    <!-- FlexSlider -->
+    <script src="assets/flexslider/jquery.flexslider.js"></script>
+	<!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+	<!-- Text Rotator -->
+	<script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
+	<!-- Lightbox.js -->
+    <script src="assets/lightbox/js/lightbox.min.js"></script>
+    <!-- Google Maps --> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
+	<!-- Theme JavaScript Core -->
+	<script src="js/main.js"></script>
+	<script src="js/script.js"></script>
 
+	<!-- GOOGLE MAPS DATA -->
+    <script type="text/javascript">
+    // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+    
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 15,
+                
+                scrollwheel: false,
 
-</body>
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(40.68961985411178, -74.01618003845215), // New York 
 
-<script>
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [	{		featureType:'water',		stylers:[{color:'#F2F2F2'},{visibility:'on'}]	},{		featureType:'landscape',		stylers:[{color:'#FFFFFF'}]	},{		featureType:'road',		stylers:[{saturation:-100},{lightness:45}]	},{		featureType:'road.highway',		stylers:[{visibility:'simplified'}]	},{		featureType:'road.arterial',		elementType:'labels.icon',		stylers:[{visibility:'off'}]	},{		featureType:'administrative',		elementType:'labels.text.fill',		stylers:[{color:'#ADADAD'}]	},{		featureType:'transit',		stylers:[{visibility:'off'}]	},{		featureType:'poi',		stylers:[{visibility:'off'}]	}]
+            };
 
-    window.addEventListener('load', function () {
-        let body = document.body;
-        let content = ["❤有些鸟儿关不住，因为它的每一片羽毛都闪烁着自由的光辉。❤", "❤谁终将划破闪电，必长久深自缄默❤", "❤竹杖芒鞋轻胜马，谁怕❤", "❤春风十里，不如你❤", "❤所谓无底深渊下去也是前程万里❤",
-            "❤花径不曾缘客扫，蓬门今始为君开❤", "❤我年华虚度，空有一身疲倦❤", "❤Stay hungry, Stay foolish❤", "❤一生只够爱一个人❤",
-            "❤",  "❤醉后不知天在水，满船清梦压星河❤","ø","∆","ƒ","∂","ß","å","µ","∫","≥","Ω"
-        ] //自定义内容的数组
-        body.addEventListener('click', function (e) {
-            let x = e.pageX;
-            let y = e.pageY; //当前坐标
-            let randContent = Math.ceil(Math.random() * content.length);
-            let text = new Text(x, y, randContent);
-            let span = document.createElement('span')
-            span.style.color = text.getRandom();
-            text.create(span);
-            setTimeout(function () {
-                text.out(span)
-            }, 1900)
-        })
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('googlemaps');
 
-        function Text(x, y, rand) {
-            this.x = x;
-            this.y = y;
-            this.rand = rand;
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
         }
-        Text.prototype.create = function (_this) {
-            let body = document.body;
-            _this.innerHTML = content[this.rand - 1];
-            _this.className = 'text'
-            _this.style.top = this.y - 20 + 'px'
-            _this.style.left = this.x - 50 + 'px'
-            _this.style.animation = 'remove 2s'
-            body.appendChild(_this);
-            let i = 0
-            setInterval(() => {
-                _this.style.top = this.y - 20 - i + 'px'
-                i++
-            }, 10);
-        }
-        Text.prototype.out = function (_this) {
-            _this.remove()
-        }
-        //设置随机颜色
-        Text.prototype.getRandom = function () {
-            let allType = '0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f'; //16进制颜色
-            let allTypeArr = allType.split(','); //通过','分割为数组
-            let color = '#';
-            for (var i = 0; i < 6; i++) {
-                //随机生成一个0-16的数
-                var random = parseInt(Math.random() * allTypeArr.length);
-                color += allTypeArr[random];
-            }
-            return color; //返回随机生成的颜色
-        }
-    })
-</script>
+	
+    </script>
+	
+	<!-- TEXT ROTATOR SETTINGS -->
+    <script type="text/javascript">
+    $(".rotate").textrotator({
+      animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+      separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+      speed: 2000 // How many milliseconds until the next word show.
+    });
+    </script>
+	
+    </body>
+  <script>
 
+      window.addEventListener('load', function () {
+          let body = document.body;
+          let content = ["❤有些鸟儿关不住，因为它的每一片羽毛都闪烁着自由的光辉。❤", "❤谁终将划破闪电，必长久深自缄默❤", "❤竹杖芒鞋轻胜马，谁怕❤", "❤春风十里，不如你❤", "❤所谓无底深渊下去也是前程万里❤",
+              "❤花径不曾缘客扫，蓬门今始为君开❤", "❤我年华虚度，空有一身疲倦❤", "❤Stay hungry, Stay foolish❤", "❤一生只够爱一个人❤",
+              "❤",  "❤醉后不知天在水，满船清梦压星河❤","ø","∆","ƒ","∂","ß","å","µ","∫","≥","Ω"
+          ] //自定义内容的数组
+          body.addEventListener('click', function (e) {
+              let x = e.pageX;
+              let y = e.pageY; //当前坐标
+              let randContent = Math.ceil(Math.random() * content.length);
+              let text = new Text(x, y, randContent);
+              let span = document.createElement('span')
+              span.style.color = text.getRandom();
+              text.create(span);
+              setTimeout(function () {
+                  text.out(span)
+              }, 1900)
+          })
+
+          function Text(x, y, rand) {
+              this.x = x;
+              this.y = y;
+              this.rand = rand;
+          }
+          Text.prototype.create = function (_this) {
+              let body = document.body;
+              _this.innerHTML = content[this.rand - 1];
+              _this.className = 'text'
+              _this.style.top = this.y - 20 + 'px'
+              _this.style.left = this.x - 50 + 'px'
+              _this.style.animation = 'remove 2s'
+              body.appendChild(_this);
+              let i = 0
+              setInterval(() => {
+                  _this.style.top = this.y - 20 - i + 'px'
+                  i++
+              }, 10);
+          }
+          Text.prototype.out = function (_this) {
+              _this.remove()
+          }
+          //设置随机颜色
+          Text.prototype.getRandom = function () {
+              let allType = '0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f'; //16进制颜色
+              let allTypeArr = allType.split(','); //通过','分割为数组
+              let color = '#';
+              for (var i = 0; i < 6; i++) {
+                  //随机生成一个0-16的数
+                  var random = parseInt(Math.random() * allTypeArr.length);
+                  color += allTypeArr[random];
+              }
+              return color; //返回随机生成的颜色
+          }
+      })
+  </script>
 </html>
