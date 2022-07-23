@@ -1,0 +1,137 @@
+
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+
+html, body {
+    padding-top:0px;
+    margin:0px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height:25px;
+    font-size:14px;
+}
+
+
+.header-section {
+  background-color:#065883;
+  color:#fff;
+  padding:40px 5px;
+}
+    .header-section img {
+        max-width:150px;
+        border:2px solid #fff;
+    }
+
+.spon-txt {
+    padding:40px 5px;
+    font-size:25px;
+    font-weight:800;
+}
+
+.blog-main {
+    padding:10px 5px;
+    border-bottom:2px solid #065883;
+    margin-bottom:30px;
+}
+.heading-blog {
+    font-size:30px;
+    color:#065883;
+    font-weight:800;
+    padding:30px 5px;
+    line-height:40px;
+}
+.blog-info {
+    padding:20px 5px; 
+    font-size:20px;
+    font-weight:normal;
+}
+.blog-txt {
+    padding:20px 5px; 
+    font-family:Andalus ;
+    font-size:20px;    
+    font-weight:normal;
+}
+.something_to_say{
+    padding:20px 5px;
+    font-size:19px;
+    font-weight:normal;
+    color: #065883;
+    text-align: center;
+}
+.set-foot {
+    padding:20px 5px;
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+
+/*.wrap{*/
+/*    border:0;*/
+/*    max-width:100% ;*/
+/*    max-height: 100%;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.wrap ul{*/
+/*    overflow: hidden;*/
+/*    position:absolute;*/
+/*    max-height: 100%;*/
+/*    max-width: 100%;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    _height:1px;*/
+/*}*/
+
+/*.wrap ul li{*/
+/*    float: left;*/
+/*    width: 200px;*/
+/*}*/
+
+* {
+    margin:0;
+    padding:0;
+}
+#btn {
+    position:absolute;
+    top:10px;
+    left:710px;
+    font-size:24px;
+}
+#btn a {
+    color:#FFF;
+    text-decoration:none;
+}
+#btn a:hover {
+    color:#FC9;
+    text-decoration:none;
+}
+#div1 {
+    width:1440px;
+    height:330px;
+    margin:2px auto;
+    position:relative;
+    overflow:hidden;
+}
+#div1 ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position:absolute;
+    top:0;
+    left:0;
+}
+#div1 ul li {
+    float:left;
+    width:320px;
+    height:330px
+}
+#div1 ul li img {
+    width:300px
+}
