@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta charset="UTF-8"><title>煎饼排序 | 独行侠</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Source+Sans+Pro&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="layout-page"><nav id="layout-menu"><div class="other-page hide"><a href="/about">About</a><a href="/archives">Archives</a></div><div class="responsive-pad"></div><div id="mega-head"><a href="/">独行侠</a></div><div class="layout-socialmedia hide"><a class="link-item main-link-item" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/JianqiaoZh"><i class="iconfont icon-twitter"></i></a><a class="link-item main-link-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/CamberidgeZhao"><i class="iconfont icon-github"></i></a><a class="link-item main-link-item" title="ZhiHu" target="_blank" rel="noopener" href="https://www.zhihu.com/people/cambridge-75-17"><i class="iconfont icon-zhihu"></i></a></div><div class="responsive-bar" onclick="toggle(this)">≡</div></nav><div id="content"><article id="post"><h1>煎饼排序</h1><time class="created-date" datetime="2022-08-14T03:40:28.000Z">2022-08-14</time><h2 id="【算法】煎饼排序-LeetCode-969"><a href="#【算法】煎饼排序-LeetCode-969" class="headerlink" title="【算法】煎饼排序	(LeetCode 969)"></a>【算法】煎饼排序	(LeetCode 969)</h2><p>在刷知乎的时候看到一个帖子上说到比尔盖茨在大二的时候在顶尖期刊《离散数学》（<em>Discrete Mathematics</em>）上发表了一篇论文把“Pancake Soritng”的效率提升了一波，我比较好奇到底什么是“煎饼排序”，也比较好奇这位计算机领域的骄子的第一篇论文同时也是最后一片天论文究竟解决了一个什么样的问题，于是在LeetCode上确实找到了这样的一道题。</p>
+<hr>
+<p>给你一个整数数组 arr ，请使用 煎饼翻转 完成对数组的排序。</p>
+<p>一次煎饼翻转的执行过程如下：</p>
+<p>选择一个整数 k ，1 &lt;&#x3D; k &lt;&#x3D; arr.length<br>反转子数组 arr[0…k-1]（下标从 0 开始）<br>例如，arr &#x3D; [3,2,1,4] ，选择 k &#x3D; 3 进行一次煎饼翻转，反转子数组 [3,2,1] ，得到 arr &#x3D; [1,2,3,4] 。</p>
+<p>以数组形式返回能使 arr 有序的煎饼翻转操作所对应的 k 值序列。任何将数组排序且翻转次数在 10 * arr.length 范围内的有效答案都将被判断为正确。</p>
+<p>示例：</p>
+<pre><code>输入：[3,2,4,1]
+输出：[4,2,4,2]
+解释：
+我们执行 4 次煎饼翻转，k 值分别为 4，2，4，和 3。
+初始状态 arr = [3, 2, 4, 1]
+第一次翻转后（k = 4）：arr = [1, 4, 2, 3]
+第二次翻转后（k = 2）：arr = [4, 1, 2, 3]
+第三次翻转后（k = 4）：arr = [3, 2, 1, 4]
+第四次翻转后（k = 3）：arr = [1, 2, 3, 4]，此时已完成排序。 
+</code></pre>
+<p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pancake-sorting">https://leetcode-cn.com/problems/pancake-sorting</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+<hr>
+<h2 id="2n效率的算法"><a href="#2n效率的算法" class="headerlink" title="2n效率的算法"></a>2n效率的算法</h2><p>我自己个人认为可以把这个看成一个<strong>动态规划</strong>问题，我想到的算法是每次对于数组处理数组的最后一个数字，就是将最大的数字反转到数列的最后一个位置，然后对于将数列缩短，再对这个数列前面的这个小数列进行操作。于是我写出来了下面这样一个算法</p>
+<pre><code class="cpp">class Solution &#123;
+public:
+
+    void Solve(vector&lt;int&gt; &amp;arr,int n,vector&lt;int&gt; &amp;ans)&#123;
+        if(n==0)
+            return ;
+        else &#123;
+            int index=find(arr.begin(), arr.begin()+n, n)-arr.begin();
+            while(index!=n-1)&#123;
+                if(index==0)&#123;
+                    reverse(arr.begin(),arr.begin()+n);
+                    ans.push_back(n);
+                &#125;
+                else &#123;
+                    reverse(arr.begin(),arr.begin()+index+1);
+                    ans.push_back(index+1);
+                &#125;
+                index=find(arr.begin(), arr.begin()+n, n)-arr.begin();
+            &#125;
+            if(n&gt;0)
+                Solve(arr,n-1,ans);
+        &#125;
+    &#125;
+    vector&lt;int&gt; pancakeSort(vector&lt;int&gt;&amp; arr) &#123;
+        vector&lt;int&gt; ans;
+
+        Solve(arr,arr.size(),ans);
+        return ans;
+    &#125;
+&#125;;
+</code></pre>
+<p>大体的思路是这样的</p>
+<ol>
+<li>每次对于找到当前这个数列中最大的数的位置</li>
+<li>把这个最大的数字翻到顶上</li>
+<li>然后再把这个数字翻到最底下</li>
+</ol>
+<p>这个是和那个时候的大部分人的想法不谋而合的，比尔盖茨的老师那天也在课上说明了这个问题的最优解需要翻转的次数为$2n-3$,但是盖茨后来证明了最少的次数$\frac{5n+5}{3}$</p>
+<h2 id="比尔盖茨的证明"><a href="#比尔盖茨的证明" class="headerlink" title="比尔盖茨的证明"></a>比尔盖茨的证明</h2><p>我们现在的这个做法是在对于每一个数字的操作是想方设法将这个数字移动到这个数字在排列中最终的位置，但Gates的想法是，我们不去找这个数字最终的位置，而是去找这个数字最终的邻居</p>
+</article><div id="paginator"></div></div><footer id="bottom"><span>© </span><span>Jianqiao Zhao</span><span>. Powered By </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>HEXO</span></a><span>. Theme </span><a target="_blank" rel="noopener" href="https://github.com/lixuetaoleo/hexo-theme-leo">leo</a></footer></div><script src="/js/style.js"></script><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

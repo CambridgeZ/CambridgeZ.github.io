@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta charset="UTF-8"><title>计算器实现思路 | 独行侠</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Source+Sans+Pro&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="layout-page"><nav id="layout-menu"><div class="other-page hide"><a href="/about">About</a><a href="/archives">Archives</a></div><div class="responsive-pad"></div><div id="mega-head"><a href="/">独行侠</a></div><div class="layout-socialmedia hide"><a class="link-item main-link-item" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/JianqiaoZh"><i class="iconfont icon-twitter"></i></a><a class="link-item main-link-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/CamberidgeZhao"><i class="iconfont icon-github"></i></a><a class="link-item main-link-item" title="ZhiHu" target="_blank" rel="noopener" href="https://www.zhihu.com/people/cambridge-75-17"><i class="iconfont icon-zhihu"></i></a></div><div class="responsive-bar" onclick="toggle(this)">≡</div></nav><div id="content"><article id="post"><h1>计算器实现思路</h1><time class="created-date" datetime="2022-08-14T02:39:40.000Z">2022-08-14</time><h1 id="一个简易计算器的实现"><a href="#一个简易计算器的实现" class="headerlink" title="一个简易计算器的实现"></a>一个简易计算器的实现</h1><p>基本思路就是采用栈和逆波兰表达式的思想对于输出的算式进行求解</p>
+<h2 id="1-实现两个需要用到的栈"><a href="#1-实现两个需要用到的栈" class="headerlink" title="1.实现两个需要用到的栈"></a>1.实现两个需要用到的栈</h2><p>首先定义存放在算式中用到的存放符号所用的栈和相关的栈的操作</p>
+<pre><code class="c++">//实现存放符号所用的栈
+typedef struct 
+&#123;
+    char *base;
+    char *top;
+    int maxsize;
+&#125;Stack;
+//对栈进行初始化
+void InitStack(Stack &amp;S,int size)
+&#123;
+    S.maxsize=size;
+    S.base=(char *)malloc(sizeof(char)*size);
+    S.top=S.base;
+&#125;
+//判断栈是否是空的
+bool is_stack_empty(Stack S)
+&#123;
+    if(S.base==S.top)
+        return true;
+    else return false;
+&#125;
+//判断栈是否是满的
+bool is_stack_full(Stack s)
+&#123;
+    int lenth=s.top-s.base;
+    if(lenth&lt;s.maxsize)
+        return false;
+    else 
+        return true;
+&#125;
+//获得栈顶顶元素
+void GetTop(Stack S,char &amp;e)
+&#123;
+    if(is_stack_empty(S))
+    &#123;
+        cout&lt;&lt;&quot;符号栈空&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    e=*(S.top-1);
+&#125;
+//出栈操作
+void Pop(Stack &amp;S,char &amp;e)
+&#123;
+    if(is_stack_empty(S))
+    &#123;
+        cout&lt;&lt;&quot;符号栈空&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    S.top--;
+    e=*(S.top);
+&#125;
+void Push(Stack &amp;s,char e)
+&#123;
+    if(is_stack_full(s))
+    &#123;
+        cout&lt;&lt;&quot;符号栈满&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    *s.top=e;
+    s.top++;
+&#125;
+</code></pre>
+<p>接着实现存放数字所用的栈和相关的操作,为了在后面使用的方便，这里所有的函数都采用重载的形式</p>
+<pre><code class="c++">typedef struct 
+&#123;
+    int *base;
+    int *top;
+    int maxsize;
+&#125;NumberStack;
+//对栈进行初始化
+void InitStack(NumberStack &amp;S,int size)
+&#123;
+    S.maxsize=size;
+    S.base=(int *)malloc(sizeof(int)*size);
+    S.top=S.base;
+&#125;
+//判断栈是否是空的
+bool is_stack_empty(NumberStack S)
+&#123;
+    if(S.base==S.top)
+        return true;
+    else return false;
+&#125;
+//判断栈是否是满的
+bool is_stack_full(NumberStack s)
+&#123;
+    int lenth=(s.top-s.base);
+    if(lenth&lt;s.maxsize)
+        return false;
+    else 
+        return true;
+&#125;
+//获得栈顶顶元素
+void GetTop(NumberStack S,int &amp;e)
+&#123;
+    if(is_stack_empty(S))
+        &#123;
+            cout&lt;&lt;&quot;数字栈空&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    e=*(S.top-1);
+&#125;
+//出栈操作
+void Pop(NumberStack &amp;S,int &amp;e)
+&#123;
+    if(is_stack_empty(S))
+        &#123;
+            cout&lt;&lt;&quot;数字栈空&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    S.top--;
+    e=*(S.top);
+&#125;
+void Push(NumberStack &amp;s,int e)
+&#123;
+    if(is_stack_full(s))
+        &#123;
+            cout&lt;&lt;&quot;数字栈满&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    s.top[0]=e;
+    s.top++;
+&#125;
+</code></pre>
+<h2 id="2-先做点简单的，把根据符号进行四则运算的操作实现"><a href="#2-先做点简单的，把根据符号进行四则运算的操作实现" class="headerlink" title="2.先做点简单的，把根据符号进行四则运算的操作实现"></a>2.先做点简单的，把根据符号进行四则运算的操作实现</h2><p>非常简单的思路,利用switch语句判断相应的符号，并且对输入的数字进行运算</p>
+<pre><code class="c++">int jisuan(char c,int a,int b)
+&#123;
+    switch (c) &#123;
+        case &#39;+&#39;:return a+b;break;
+        case &#39;-&#39;:return a-b;break;
+        case &#39;/&#39;:return a/b;break;
+        case &#39;*&#39;:return a*b;break;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="3-实现在函数中获取数字的操作"><a href="#3-实现在函数中获取数字的操作" class="headerlink" title="3.实现在函数中获取数字的操作"></a>3.实现在函数中获取数字的操作</h2><p>由于我们是采用字符串的形式输入表达式，因此在这个过程中必然会出现不适个位数的情形，如果直接对于数字字符进行入栈操作，那么势必会出现错误</p>
+<pre><code class="c++">int num=0;
+            while(s[i]&gt;=&#39;0&#39;&amp;&amp;s[i]&lt;=&#39;9&#39;)
+            &#123;//获取表达式中的数字并且进栈
+                num=num*10;
+                num+=(s[i]-&#39;0&#39;);
+                i++;
+            &#125;
+            Push(N,num);
+</code></pre>
+<h2 id="4-对于整个表达试进行入栈和出栈操作"><a href="#4-对于整个表达试进行入栈和出栈操作" class="headerlink" title="4.对于整个表达试进行入栈和出栈操作"></a>4.对于整个表达试进行入栈和出栈操作</h2><pre><code class="c++">//出栈一个符号并且计算
+void Pop_and_jisuan(Stack &amp;S,NumberStack &amp;N)
+&#123;
+    char character;
+    Pop(S, character);
+    int a,b;
+    Pop(N, b);
+    Pop(N, a);
+    int n=jisuan(character, a, b);
+    Push(N,n);
+&#125;
+//对于表达式的操作
+void OperateStack(Stack &amp;S,char c,NumberStack &amp;N)
+&#123;
+    switch (c) &#123;
+        case &#39;(&#39;:&#123;
+            Push(S,c);
+        &#125;break;	
+        case &#39;)&#39;:
+            &#123;
+                char character;
+                Pop(S,character);
+                while(character!=&#39;(&#39;&amp;&amp;character!=&#39;#&#39;)
+                &#123;
+                    int n;
+                    int a,b;
+                    Pop(N,b);
+                    Pop(N,a);
+                    n=jisuan(character, a, b);
+                    Push(N,n);
+                    Pop(S, character);
+                &#125;
+            &#125;break;
+        case &#39;+&#39;:
+        case &#39;-&#39;:
+            &#123;
+                char e;
+                GetTop(S,e);
+                while(e==&#39;*&#39;||e==&#39;/&#39;)
+                &#123;
+                    Pop_and_jisuan(S, N);
+                    GetTop(S, e);
+                &#125;
+                Push(S,c);
+            &#125;break;
+        case &#39;*&#39;:
+        case &#39;/&#39;:
+            &#123;
+                Push(S,c);
+            &#125;break;
+        case &#39;#&#39;:
+            &#123;
+                char e;
+                GetTop(S, e);
+                while(e!=&#39;#&#39;)
+                &#123;
+                    Pop_and_jisuan(S, N);
+                    GetTop(S, e);
+                &#125;
+            &#125;
+    &#125;
+&#125;
+</code></pre>
+<h3 id="x3D-x3D-完整代码如下-x3D-x3D"><a href="#x3D-x3D-完整代码如下-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;完整代码如下&#x3D;&#x3D;"></a>&#x3D;&#x3D;完整代码如下&#x3D;&#x3D;</h3><pre><code class="c++">#include &lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+//用来存放符号的栈的一系列操作
+typedef struct 
+&#123;
+    char *base;
+    char *top;
+    int maxsize;
+&#125;Stack;
+//对栈进行初始化
+void InitStack(Stack &amp;S,int size)
+&#123;
+    S.maxsize=size;
+    S.base=(char *)malloc(sizeof(char)*size);
+    S.top=S.base;
+&#125;
+//判断栈是否是空的
+bool is_stack_empty(Stack S)
+&#123;
+    if(S.base==S.top)
+        return true;
+    else return false;
+&#125;
+//判断栈是否是满的
+bool is_stack_full(Stack s)
+&#123;
+    int lenth=s.top-s.base;
+    if(lenth&lt;s.maxsize)
+        return false;
+    else 
+        return true;
+&#125;
+//获得栈顶顶元素
+void GetTop(Stack S,char &amp;e)
+&#123;
+    if(is_stack_empty(S))
+    &#123;
+        cout&lt;&lt;&quot;符号栈空&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    e=*(S.top-1);
+&#125;
+//出栈操作
+void Pop(Stack &amp;S,char &amp;e)
+&#123;
+    if(is_stack_empty(S))
+    &#123;
+        cout&lt;&lt;&quot;符号栈空&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    S.top--;
+    e=*(S.top);
+&#125;
+void Push(Stack &amp;s,char e)
+&#123;
+    if(is_stack_full(s))
+    &#123;
+        cout&lt;&lt;&quot;符号栈满&quot;&lt;&lt;endl;
+        return ;
+    &#125;
+    *s.top=e;
+    s.top++;
+&#125;
+//用于存放数字的栈的操作
+typedef struct 
+&#123;
+    int *base;
+    int *top;
+    int maxsize;
+&#125;NumberStack;
+//对栈进行初始化
+void InitStack(NumberStack &amp;S,int size)
+&#123;
+    S.maxsize=size;
+    S.base=(int *)malloc(sizeof(int)*size);
+    S.top=S.base;
+&#125;
+//判断栈是否是空的
+bool is_stack_empty(NumberStack S)
+&#123;
+    if(S.base==S.top)
+        return true;
+    else return false;
+&#125;
+//判断栈是否是满的
+bool is_stack_full(NumberStack s)
+&#123;
+    int lenth=(s.top-s.base);
+    if(lenth&lt;s.maxsize)
+        return false;
+    else 
+        return true;
+&#125;
+//获得栈顶顶元素
+void GetTop(NumberStack S,int &amp;e)
+&#123;
+    if(is_stack_empty(S))
+        &#123;
+            cout&lt;&lt;&quot;数字栈空&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    e=*(S.top-1);
+&#125;
+//出栈操作
+void Pop(NumberStack &amp;S,int &amp;e)
+&#123;
+    if(is_stack_empty(S))
+        &#123;
+            cout&lt;&lt;&quot;数字栈空&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    S.top--;
+    e=*(S.top);
+&#125;
+void Push(NumberStack &amp;s,int e)
+&#123;
+    if(is_stack_full(s))
+        &#123;
+            cout&lt;&lt;&quot;数字栈满&quot;&lt;&lt;endl;
+            return ;
+        &#125;
+    s.top[0]=e;
+    s.top++;
+&#125;
+//先把计算操作写好
+int jisuan(char c,int a,int b)
+&#123;
+    switch (c) &#123;
+        case &#39;+&#39;:return a+b;break;
+        case &#39;-&#39;:return a-b;break;
+        case &#39;/&#39;:return a/b;break;
+        case &#39;*&#39;:return a*b;break;
+    &#125;
+&#125;
+//出栈一个符号并且计算
+void Pop_and_jisuan(Stack &amp;S,NumberStack &amp;N)
+&#123;
+    char character;
+    Pop(S, character);
+    int a,b;
+    Pop(N, b);
+    Pop(N, a);
+    int n=jisuan(character, a, b);
+    Push(N,n);
+&#125;
+//对于表达式的操作
+void OperateStack(Stack &amp;S,char c,NumberStack &amp;N)
+&#123;
+    switch (c) &#123;
+        case &#39;(&#39;:&#123;
+            Push(S,c);
+        &#125;break;	
+        case &#39;)&#39;:
+            &#123;
+                char character;
+                Pop(S,character);
+                while(character!=&#39;(&#39;&amp;&amp;character!=&#39;#&#39;)
+                &#123;
+                    int n;
+                    int a,b;
+                    Pop(N,b);
+                    Pop(N,a);
+                    n=jisuan(character, a, b);
+                    Push(N,n);
+                    Pop(S, character);
+                &#125;
+            &#125;break;
+        case &#39;+&#39;:
+        case &#39;-&#39;:
+            &#123;
+                char e;
+                GetTop(S,e);
+                while(e==&#39;*&#39;||e==&#39;/&#39;)
+                &#123;
+                    Pop_and_jisuan(S, N);
+                    GetTop(S, e);
+                &#125;
+                Push(S,c);
+            &#125;break;
+        case &#39;*&#39;:
+        case &#39;/&#39;:
+            &#123;
+                Push(S,c);
+            &#125;break;
+        case &#39;#&#39;:
+            &#123;
+                char e;
+                GetTop(S, e);
+                while(e!=&#39;#&#39;)
+                &#123;
+                    Pop_and_jisuan(S, N);
+                    GetTop(S, e);
+                &#125;
+            &#125;
+    &#125;
+&#125;
+int main() &#123;
+    Stack S;
+    NumberStack N;
+    char s[100];
+    cin&gt;&gt;s;
+    int n=strlen(s);
+    s[n]=&#39;#&#39;;
+    s[n+1]=0;
+    int i=0;
+    InitStack(S,100);
+    InitStack(N, 100);
+    Push(S,&#39;#&#39;);
+    while(s[i])
+    &#123;
+        if(s[i]==&#39;+&#39;||s[i]==&#39;-&#39;||s[i]==&#39;*&#39;||s[i]==&#39;/&#39;||s[i]==&#39;#&#39;||s[i]==&#39;(&#39;||s[i]==&#39;)&#39;)
+        &#123;
+            OperateStack(S,s[i],N);
+            i++;
+        &#125;
+        else if(s[i]&gt;=&#39;0&#39;&amp;&amp;s[i]&lt;=&#39;9&#39;)
+        &#123;
+            int num=0;
+            while(s[i]&gt;=&#39;0&#39;&amp;&amp;s[i]&lt;=&#39;9&#39;)
+            &#123;//获取表达式中的数字并且进栈
+                num=num*10;
+                num+=(s[i]-&#39;0&#39;);
+                i++;
+            &#125;
+            Push(N,num);
+        &#125;
+    &#125;
+    int result;
+    GetTop(N, result);
+    cout&lt;&lt;&#39;=&#39;&lt;&lt;result&lt;&lt;endl;
+    return 0;
+&#125;
+</code></pre>
+</article><div id="paginator"></div></div><footer id="bottom"><span>© </span><span>Jianqiao Zhao</span><span>. Powered By </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>HEXO</span></a><span>. Theme </span><a target="_blank" rel="noopener" href="https://github.com/lixuetaoleo/hexo-theme-leo">leo</a></footer></div><script src="/js/style.js"></script><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script></body></html>

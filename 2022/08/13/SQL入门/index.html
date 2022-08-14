@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta charset="UTF-8"><title>SQL入门 | 独行侠</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lato|Source+Sans+Pro&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="layout-page"><nav id="layout-menu"><div class="other-page hide"><a href="/about">About</a><a href="/archives">Archives</a></div><div class="responsive-pad"></div><div id="mega-head"><a href="/">独行侠</a></div><div class="layout-socialmedia hide"><a class="link-item main-link-item" title="Twitter" target="_blank" rel="noopener" href="https://twitter.com/JianqiaoZh"><i class="iconfont icon-twitter"></i></a><a class="link-item main-link-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/CamberidgeZhao"><i class="iconfont icon-github"></i></a><a class="link-item main-link-item" title="ZhiHu" target="_blank" rel="noopener" href="https://www.zhihu.com/people/cambridge-75-17"><i class="iconfont icon-zhihu"></i></a></div><div class="responsive-bar" onclick="toggle(this)">≡</div></nav><div id="content"><article id="post"><h1>SQL入门</h1><time class="created-date" datetime="2022-08-13T13:19:28.000Z">2022-08-13</time><h2 id="写在开头的几点事情"><a href="#写在开头的几点事情" class="headerlink" title="写在开头的几点事情"></a>写在开头的几点事情</h2><ol>
+<li>mysql中的关键字不区分大小写也就是说 SELECT,select ,Select都是一样的管用</li>
+<li>对于我们自己定义的属性的名称，虽然我们可以直接写写属性的名称，但是为了避免和关键走出现冲突常常使用”&#96;&#96;“将我们自定义的词语包括在其中</li>
+<li>mysql中的注释语句目前我知道的有三种写法</li>
+</ol>
+<h2 id="数据基本操作"><a href="#数据基本操作" class="headerlink" title="数据基本操作"></a>数据基本操作</h2><pre><code class="mysql">CREATE DATABASE `learn_sql`; -- 创建数据库
+SHOW DATABASES; -- 显示现在所有的数据库
+USE `learn_sql`;  -- 开始使用某个数据库
+</code></pre>
+<h2 id="创建表格并操作"><a href="#创建表格并操作" class="headerlink" title="创建表格并操作"></a>创建表格并操作</h2><pre><code class="mysql">CREATE TABLE `student`(
+    `student_id` INT PRIMARY KEY,-- 数据名称 数据类型，有一个数据为主键(primary key)
+    `name` VARCHAR(20),  -- 字符串数据类型，VERCHAR(字符串长度)
+    `major` VARCHAR(20) DEFAULT &#39;计算机&#39; -- 可以给某个数据类型默认值，这里默认的专业为计算机
+);
+
+DESCRIBE `student`;-- 显示表格里面各项数据及其类型
+DROP TABLE `student`;-- 删除表格
+
+ALTER TABLE `student` ADD gpa DECIMAL(3,2);-- 对于表格加入属性
+</code></pre>
+<h2 id="对于表格中的数据进行操作"><a href="#对于表格中的数据进行操作" class="headerlink" title="对于表格中的数据进行操作"></a>对于表格中的数据进行操作</h2><pre><code class="mysql">INSERT INTO `student` VALUES (2,&#39;小黑&#39;,&#39;生物&#39;,&#39;4.0&#39;);-- 插入数据
+INSERT INTO `student` VALUES (3,&#39;小绿&#39;,NULL,NULL);-- 有的项目不想填的话直接写成null
+
+INSERT INTO `student`(`name`,`major`,`studnet_id`,`gpa`) VALUES (&#39;小红&#39;,NULL,4,NULL);-- 可以在前面写东西来限制加入的属性的顺序
+
+SELECT * FROM `student`; -- 用来查看表格中的所有数据。*在数据库中表示的是全部的意思
+</code></pre>
+<h2 id="在对于数据库中的数据做限制"><a href="#在对于数据库中的数据做限制" class="headerlink" title="在对于数据库中的数据做限制"></a>在对于数据库中的数据做限制</h2><pre><code class="mysql">--  constrain 限制
+DROP Table `student`;
+-- 在创建数据库时对于数据类型进行限制
+CREATE TABLE `student`(
+    `student_id` INT PRIMARY KEY,
+    `name` VARCHAR(20) NOT NULL,-- 非空
+    `major` VARCHAR(20) UNIQUE -- 不能重复
+);
+</code></pre>
+<h2 id="对于数据库中进行增删改查"><a href="#对于数据库中进行增删改查" class="headerlink" title="对于数据库中进行增删改查"></a>对于数据库中进行增删改查</h2><pre><code class="mysql">INSERT INTO `student` VALUES (2,&#39;小黑&#39;,&#39;生物&#39;);-- 插入数据
+INSERT INTO `student` VALUES (3,&#39;小绿&#39;,NULL);
+
+DROP Table `student`;-- 删除表格
+
+CREATE TABLE `student`(
+    `student_id` INT AUTO_INCREMENT ,
+    `name` VARCHAR(20) ,     
+    `major` VARCHAR(20),
+    PRIMARY KEY(`student_id`)
+);
+
+INSERT INTO `student` VALUES (1,&#39;小黑&#39;,&#39;生物&#39;);
+INSERT INTO `student` VALUES (2,&#39;小绿&#39;,NULL);
+INSERT INTO `student`(`name`,`major`) VALUES (&#39;小黄&#39;,&#39;计算机&#39;);
+
+SELECT * FROM `student`;
+
+-- 修改删除数据
+
+SET SQL_SAFE_UPDATES=0;
+
+CREATE TABLE `student`(
+    `student_id` INT AUTO_INCREMENT ,
+    `name` VARCHAR(20) ,     
+    `major` VARCHAR(20),
+    PRIMARY KEY(`student_id`),
+    `score` INT
+);
+
+INSERT INTO `student` VALUES (1,&#39;小黑&#39;,&#39;生物&#39;,90);
+INSERT INTO `student` VALUES (2,&#39;小绿&#39;,&#39;生物&#39;,70);
+INSERT INTO `student`(`name`,`major`,`score`) VALUES (&#39;小黄&#39;,&#39;计算机&#39;,91);
+
+SELECT * FROM `student`;
+
+-- 修改
+UPDATE `student` 
+SET `major`= &#39;生命科学&#39;
+WHERE `major`=&#39;生物&#39;;
+
+-- 删除
+DELETE FROM `student`
+WHERE `score`&lt;80;
+
+SELECT * FROM `student`;
+
+-- 查询数据
+
+SELECT `name`,`major` FROM`student`;
+#查询时从低到高排序
+SELECT * 
+FROM `student`
+ORDER BY `score` ;
+
+#查询时从高到低排序
+SELECT * 
+FROM `student`
+ORDER BY `score`,`student_id` DESC
+LIMIT 1;
+
+SELECT `name`,`major` FROM`student` limit 1;
+
+SELECT *
+FROM `student`
+WHERE `major`=&#39;计算机&#39;;
+
+SELECT *
+FROM `student`
+WHERE `major`IN(&#39;计算机&#39;,&#39;历史&#39;,&#39;生命科学&#39;);
+</code></pre>
+<h2 id="创建一个含有多个表格的复杂数据库"><a href="#创建一个含有多个表格的复杂数据库" class="headerlink" title="创建一个含有多个表格的复杂数据库"></a>创建一个含有多个表格的复杂数据库</h2><pre><code class="mysql">-- 创建比较复杂的数据库（创建一个简单的公司资料库）
+DROP TABLE `student`;
+
+CREATE table`employee`(
+    `emp_id` INT PRIMARY KEY,
+    `name` VARCHAR(20),
+    `birth_date` DATE,
+    `sex` varchar(20),
+    `salary` int,
+    `branch_id` int,
+    `sup_id` int
+);
+
+create table `branch`(
+    `branch_id` int primary key,
+    `branch_name` varchar(20),
+    `manager_id` int,
+    foreign key(`manager_id`) references `employee`(`emp_id`) on delete set null
+);
+
+create table `client`(
+    `client_id` int primary key,
+    `client_name` varchar(20),
+    `phone` varchar(20)
+);
+
+create table `work_with`(
+    `emp_id` int,
+    `client_id` int ,
+    `total_sales` int,
+    foreign key (`emp_id`) references `employee`(`emp_id`) on delete cascade,
+    foreign key (`client_id`) references `client`(`client_id`) on delete cascade
+);
+
+
+#补上由于之前表格没有创建完而缺少的foreign key
+alter table `employee`
+add foreign key(`branch_id`)
+references `branch`(`branch_id`) on delete set null;
+
+alter table `employee`
+add foreign key(`sup_id`) references `employee`(`emp_id`) on delete set null;
+
+#插入数据
+##所有有foreign key指向的那个东西必须先存在
+# 这里我们选择先创建部门，然后把部门经理全部设置为null然后在后面创建员工表格的时候再把这个改回来
+insert into `branch` values(1,&#39;行政&#39;,null);
+insert into `branch` values(2,&#39;研发&#39;,null);
+insert into `branch` values(3,&#39;资讯&#39;,null);
+
+insert into `employee` values(206,&#39;小黄&#39;,&#39;1998-10-08&#39;,&#39;F&#39;,5000,1,null);
+insert into `employee` values(207,&#39;小绿&#39;,&#39;1985-09-16&#39;,&#39;M&#39;,2900,2,206);
+insert into `employee` values(208,&#39;小黑&#39;,&#39;2000-12-19&#39;,&#39;M&#39;,3500,3,206);
+insert into `employee` values(209,&#39;小白&#39;,&#39;1997-01-22&#39;,&#39;F&#39;,3900,3,207);
+insert into `employee` values(210,&#39;小蓝&#39;,&#39;1925-11-10&#39;,&#39;F&#39;,8400,1,207);
+
+update `branch` set `manager_id`=208 where `branch_id`=3;
+insert into `client` values(400,&#39;阿猫&#39;,&#39;13987655908&#39;);
+insert into `client` values(401,&#39;阿狗&#39;,&#39;13987655912&#39;);
+insert into `client` values(402,&#39;旺来&#39;,&#39;15487655908&#39;);
+insert into `client` values(403,&#39;露西&#39;,&#39;18887655908&#39;);
+insert into `client` values(404,&#39;艾萨克&#39;,&#39;1987655908&#39;); 
+
+insert into `work_with` values(206,400,70000);
+insert into `work_with` values(207,401,2400);
+insert into `work_with` values(208,402,9800);
+insert into `work_with` values(208,403,24000);
+insert into `work_with` values(210,404,87940);
+
+select * from  `branch`;
+select * from `employee`;
+update `branch` set `manager_id`=206 where `branch_id`=1;
+update `branch` set `manager_id`=207 where `branch_id`=2;
+
+
+-- 数据库操作练习
+-- 1.获得员工的数据
+select * from `employee`;
+-- 2.获得客户资料
+select * from `client` ;
+-- 3.按照薪水对于员工进行排序
+select * from `employee` order by `salary` desc;
+select * from `employee` order by `salary` ;
+-- 4.获得工资前三高的员工
+select * from `employee` order by `salary` desc limit 3;
+-- 5.获取所有员工的名字
+select `name` from `employee`;
+-- 6.不重复的获得性别
+select distinct `sex` from `employee`;
+
+
+
+-- aggregate function 聚合函数
+-- 1.取得员工人数
+select count(*) from `employee`;
+select count(`sup_id`) from `employee`;
+-- 2.取得出生在特定日期之后的女性员工人数
+select count(*) from `employee` where `birth_date`&gt;&#39;1970_01_01&#39; and `sex`=&#39;M&#39;;
+-- 3.取得所有员工的平均薪水
+select avg(salary) from employee;
+-- 4.取得所有员工薪水的总和
+select sum(`salary`) from `employee`;
+-- 5.找出薪水最高/低的员工
+select max(`salary`) from `employee`;
+select min(`salary`) from `employee`;
+
+
+-- wildcards 万用字元。%代表多个字元。 _代表一个字元
+-- 1.取得电话尾号为335的用户
+select * from `client` where `phone` like &#39;%335&#39;;
+-- 2.去的姓氏为‘阿’的客户
+select * from `client` where `client_name` like &#39;阿%&#39;;
+-- 3.生日在12月的员工
+select * from `employee` where `birth_date` like &#39;%12%&#39;;
+select * from `employee` where `birth_date` like &#39;_____12%&#39;;
+
+
+
+-- union 联集
+-- 1.员工的名字union客户的名字
+select `name` from employee
+union
+select `client_name` from `client`;
+-- 2.员工ID+员工名字 union 客户ID+客户名字
+select `emp_id`as `total_id`,`name` as `total_name` from `employee` union select `client_id`,`client_name`from `client`; 
+-- 合并数据类型要一样，数据数目要一样
+
+
+
+-- join 连接
+insert `branch` values(4,&#39;偷懒&#39;,null);
+-- 取的所有部门经理的名字
+select * from employee  join branch on emp_id= manager_id;
+select `emp_id`,`name`,`branch_name` from employee  join branch on `employee`.`emp_id` = `branch`.`manager_id`;
+select `emp_id`,`name`,`branch_name` from employee  left join branch on `employee`.`emp_id` = `branch`.`manager_id`; #只要左边的表格成立就可以回传资料
+
+
+
+-- subquery子查询
+
+-- 1.找出研发部门经理的名字
+select `name` from employee where emp_id=(
+    select `manager_id` 
+    from `branch`
+    where `branch_name` =&#39;研发&#39;
+);
+-- 2.找出对于一位客户销售额超过5000的员工的名字
+select `name` from employee where emp_id in(
+    select `emp_id` 
+    from `work_with`
+    where `total_sales` &gt; 50000
+);
+</code></pre>
+</article><div id="paginator"></div></div><footer id="bottom"><span>© </span><span>Jianqiao Zhao</span><span>. Powered By </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>HEXO</span></a><span>. Theme </span><a target="_blank" rel="noopener" href="https://github.com/lixuetaoleo/hexo-theme-leo">leo</a></footer></div><script src="/js/style.js"></script><script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script></body></html>
