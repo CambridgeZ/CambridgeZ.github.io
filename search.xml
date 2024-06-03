@@ -1,109 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Markdown入门</title>
-    <url>/2022/08/15/Markdown%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<h2 id="Markdown入门"><a href="#Markdown入门" class="headerlink" title="Markdown入门"></a>Markdown入门</h2><pre><code class="c++">#include&lt;iostream&gt;
-using namespace std;
-int main()
-&#123;
-  cout&lt;&lt;&quot;hello world&quot;&lt;&lt;endl;
-&#125;
-</code></pre>
-<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><table>
-<thead>
-<tr>
-<th align="center">你好</th>
-<th align="right">你好</th>
-<th align="left">你好</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">有点意思</td>
-<td align="right">有点意思</td>
-<td align="left">有点意思</td>
-</tr>
-<tr>
-<td align="center">什么</td>
-<td align="right">好家伙</td>
-<td align="left">好吧</td>
-</tr>
-<tr>
-<td align="center">冲冲冲</td>
-<td align="right">我爱C++</td>
-<td align="left">什么东西</td>
-</tr>
-</tbody></table>
-<p><strong>粗体</strong></p>
-<p><em>倾斜</em></p>
-<p><em><strong>斜体加粗</strong></em><br><del>删除线</del></p>
-<p>&#x3D;&#x3D;高亮&#x3D;&#x3D;</p>
-<p>我是^上标^</p>
-<p>我是<del>小标</del></p>
-<p>&#x3D;&#x3D;列表&#x3D;&#x3D;</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
-<li>一二三四五<ul>
-<li>有点意思</li>
-<li>呵呵哒<ul>
-<li>你好哇</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>上山打老虎</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>&#x3D;&#x3D;引用&#x3D;&#x3D;</p>
-<blockquote>
-<p>一二三四五</p>
-<blockquote>
-<p>一二三四五</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>一二三四五</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>一二三四五</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<hr>
-<p>分割线</p>
-<p>&#x3D;&#x3D;LateX语法&#x3D;&#x3D;<br>$$<br>y&#x3D;x^2+2<br>$$</p>
-<p>$$<br>\lfloor x\rfloor<br>\lceil y \rceil<br>\uparrow<br>\downarrow<br>\updownarrow<br>\backslash<br>\ulcorner<br>\llcorner<br>\urcorner<br>\lrcorner<br>|<br>\mathscr{ABCD 1234}<br>\mathfrak{ABCD 1234}<br>\mathbb{ABCDabcdefg 12345}<br>$$</p>
-<p>$$<br>希腊字母<br>\alpha<br>\beta<br>\gamma<br>\epsilon<br>\zeta<br>A<br>\Delta<br>\delta<br>\Xi<br>\Lambda<br>\lambda<br>\sigma<br>\Sigma<br>\upsilon<br>\phi<br>\chi<br>\Phi<br>\varPsi<br>\pi<br>\rho<br>$$</p>
-<p>$$<br>运算符\pm<br>\cdot<br>\cup<br>\oplus<br>\odot<br>\mp<br>\star<br>\times<br>\otimes<br>\setminus<br>\div<br>$$</p>
-<p>$$<br>E&#x3D;m\cdot<br>c^2<br>$$</p>
-<p>$$<br>二元关系符号:&lt; \ll \prec \sim \subset \in \parallel \asymp \gg \neq \approx\propto \notin \equiv \supset \ni \perp \leq \ge \subseteq \ni \simeq \cong<br>$$</p>
-<p>$$<br>二元关系： \because  \subsetneqq \therefore\supsetneqq \ngtr \nless<br>$$</p>
-<p>$$<br>\leftarrow   \rightarrow \leftrightarrow \nearrow \swarrow \Leftarrow \Rightarrow\longleftarrow<br>\Longleftarrow \Longleftrightarrow \circlearrowleft \nLeftarrow \nRightarrow \nleftarrow<br>\nrightarrow \leftrightarrows<br>$$<br>$$<br>其他符号：\forall \exist \nabla \ell \jmath \dots \cdots \vdots \ddots \aleph \S  \P<br>\angle  \infty<br>\heartsuit \hbar \hslash \bigstar \square \varnothing \measuredangle<br>$$</p>
-<p>$$<br>\sin<br>\cos<br>\arccos<br>\arcsin<br>\arctan<br>\tan<br>\cot<br>\arctan<br>\cot<br>\sec<br>\cosh<br>\sinh<br>\min<br>\max<br>a^3_{ij}<br>{a_{ij}}^3<br>{}^{12}_{6}\mathrm{C}<br>$$</p>
-<p>$$<br>微积分符号:\dot{x}&#x3D;v<br>$$</p>
-<p>$$<br>\ddot{x}&#x3D;\dot{v}<br>$$</p>
-<p>$$<br>y’&#x3D;x \qquad \int ^{death}_{birth}time &#x3D;life\qquad \iint_sE\cdot ds&#x3D;Q\cdot \epsilon_0\qquad 分式\frac{y}{x}\qquad \tfrac{a}{b}\qquad<br>$$</p>
-<p>$$<br>\sqrt{2}\qquad\sqrt[3]{x}\qquad \overline{m+n} \qquad \underbrace{a_1+a_2+\ldots+a_n}_{n}<br>\qquad \underbracket[0.4pt][1ex]{a_1+a_2+\cdots+a_n}_n\quad a\xleftarrow{x+y+z} b<br>\qquad a\xrightarrow[x&lt;y]{a<em>b</em>c}d\qquad \hat A \qquad \hat{AB}\qquad<br>$$</p>
-<p>$$<br>\qquad \tilde{C} \quad \widetilde{CD}\qquad A\overset{abc}{&#x3D;}B \qquad A\underset{b}{&#x3D;}C\quad 去心邻域\mathring{U}\qquad \sum_{i&#x3D;1}^n\qquad \prod_{j&#x3D;1}^{n}\qquad \sideset{_a^b}{_c^d}\sum<br>$$</p>
-<p>$$<br>\sum_{\substack{0&lt;i&lt;n\0&lt;j&lt;m}}p_{ij}&#x3D;\prod_{\substack{i\in n\1&lt;j&lt;m}}q_{ij}\qquad \max\limits_{i&gt;1}^{x}\quad \mathop{xyz}\limits_{x&gt;0}<br>$$</p>
-<p>$$<br>关于矩阵：\begin{pmatrix}0&amp;1\1&amp;0\end{pmatrix}<br>$$</p>
-<p>$$<br>y&#x3D;\begin{cases}\int x,&amp;x&gt;0 \ 0, &amp;x&#x3D;0\ x-1 ,&amp;x&lt;0 \end{cases},x\in\mathbb{R}<br>$$</p>
-<hr>
-<h3 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h3><p>![理论](&#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;截屏2021-01-30 16.35.22.png)</p>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>[github](https:<a href="http://www.github.com/">www.github.com</a></p>
-<pre><code class="mermaid">graph TD;
-A--&gt;B;
-B--&gt;C;
-C--&gt;A;
-</code></pre>
-]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SQL入门</title>
     <url>/2022/08/13/SQL%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h2 id="写在开头的几点事情"><a href="#写在开头的几点事情" class="headerlink" title="写在开头的几点事情"></a>写在开头的几点事情</h2><ol>
@@ -390,30 +287,107 @@ select `name` from employee where emp_id in(
 ]]></content>
   </entry>
   <entry>
-    <title>我们应该面向谁歌唱</title>
-    <url>/2024/01/22/%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E9%9D%A2%E5%90%91%E8%B0%81%E6%AD%8C%E5%94%B1/</url>
-    <content><![CDATA[<h2 style="text-align = right ">——腰乐队</h2>
-![相见恨晚](/image/相见恨晚.jpeg)
-
+    <title>Markdown入门</title>
+    <url>/2022/08/15/Markdown%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="Markdown入门"><a href="#Markdown入门" class="headerlink" title="Markdown入门"></a>Markdown入门</h2><pre><code class="c++">#include&lt;iostream&gt;
+using namespace std;
+int main()
+&#123;
+  cout&lt;&lt;&quot;hello world&quot;&lt;&lt;endl;
+&#125;
+</code></pre>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><table>
+<thead>
+<tr>
+<th align="center">你好</th>
+<th align="right">你好</th>
+<th align="left">你好</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">有点意思</td>
+<td align="right">有点意思</td>
+<td align="left">有点意思</td>
+</tr>
+<tr>
+<td align="center">什么</td>
+<td align="right">好家伙</td>
+<td align="left">好吧</td>
+</tr>
+<tr>
+<td align="center">冲冲冲</td>
+<td align="right">我爱C++</td>
+<td align="left">什么东西</td>
+</tr>
+</tbody></table>
+<p><strong>粗体</strong></p>
+<p><em>倾斜</em></p>
+<p><em><strong>斜体加粗</strong></em><br><del>删除线</del></p>
+<p>&#x3D;&#x3D;高亮&#x3D;&#x3D;</p>
+<p>我是^上标^</p>
+<p>我是<del>小标</del></p>
+<p>&#x3D;&#x3D;列表&#x3D;&#x3D;</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>一二三四五<ul>
+<li>有点意思</li>
+<li>呵呵哒<ul>
+<li>你好哇</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上山打老虎</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>&#x3D;&#x3D;引用&#x3D;&#x3D;</p>
+<blockquote>
+<p>一二三四五</p>
+<blockquote>
+<p>一二三四五</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>一二三四五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>一二三四五</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr>
+<p>分割线</p>
+<p>&#x3D;&#x3D;LateX语法&#x3D;&#x3D;<br>$$<br>y&#x3D;x^2+2<br>$$</p>
+<p>$$<br>\lfloor x\rfloor<br>\lceil y \rceil<br>\uparrow<br>\downarrow<br>\updownarrow<br>\backslash<br>\ulcorner<br>\llcorner<br>\urcorner<br>\lrcorner<br>|<br>\mathscr{ABCD 1234}<br>\mathfrak{ABCD 1234}<br>\mathbb{ABCDabcdefg 12345}<br>$$</p>
+<p>$$<br>希腊字母<br>\alpha<br>\beta<br>\gamma<br>\epsilon<br>\zeta<br>A<br>\Delta<br>\delta<br>\Xi<br>\Lambda<br>\lambda<br>\sigma<br>\Sigma<br>\upsilon<br>\phi<br>\chi<br>\Phi<br>\varPsi<br>\pi<br>\rho<br>$$</p>
+<p>$$<br>运算符\pm<br>\cdot<br>\cup<br>\oplus<br>\odot<br>\mp<br>\star<br>\times<br>\otimes<br>\setminus<br>\div<br>$$</p>
+<p>$$<br>E&#x3D;m\cdot<br>c^2<br>$$</p>
+<p>$$<br>二元关系符号:&lt; \ll \prec \sim \subset \in \parallel \asymp \gg \neq \approx\propto \notin \equiv \supset \ni \perp \leq \ge \subseteq \ni \simeq \cong<br>$$</p>
+<p>$$<br>二元关系： \because  \subsetneqq \therefore\supsetneqq \ngtr \nless<br>$$</p>
+<p>$$<br>\leftarrow   \rightarrow \leftrightarrow \nearrow \swarrow \Leftarrow \Rightarrow\longleftarrow<br>\Longleftarrow \Longleftrightarrow \circlearrowleft \nLeftarrow \nRightarrow \nleftarrow<br>\nrightarrow \leftrightarrows<br>$$<br>$$<br>其他符号：\forall \exist \nabla \ell \jmath \dots \cdots \vdots \ddots \aleph \S  \P<br>\angle  \infty<br>\heartsuit \hbar \hslash \bigstar \square \varnothing \measuredangle<br>$$</p>
+<p>$$<br>\sin<br>\cos<br>\arccos<br>\arcsin<br>\arctan<br>\tan<br>\cot<br>\arctan<br>\cot<br>\sec<br>\cosh<br>\sinh<br>\min<br>\max<br>a^3_{ij}<br>{a_{ij}}^3<br>{}^{12}_{6}\mathrm{C}<br>$$</p>
+<p>$$<br>微积分符号:\dot{x}&#x3D;v<br>$$</p>
+<p>$$<br>\ddot{x}&#x3D;\dot{v}<br>$$</p>
+<p>$$<br>y’&#x3D;x \qquad \int ^{death}_{birth}time &#x3D;life\qquad \iint_sE\cdot ds&#x3D;Q\cdot \epsilon_0\qquad 分式\frac{y}{x}\qquad \tfrac{a}{b}\qquad<br>$$</p>
+<p>$$<br>\sqrt{2}\qquad\sqrt[3]{x}\qquad \overline{m+n} \qquad \underbrace{a_1+a_2+\ldots+a_n}_{n}<br>\qquad \underbracket[0.4pt][1ex]{a_1+a_2+\cdots+a_n}_n\quad a\xleftarrow{x+y+z} b<br>\qquad a\xrightarrow[x&lt;y]{a<em>b</em>c}d\qquad \hat A \qquad \hat{AB}\qquad<br>$$</p>
+<p>$$<br>\qquad \tilde{C} \quad \widetilde{CD}\qquad A\overset{abc}{&#x3D;}B \qquad A\underset{b}{&#x3D;}C\quad 去心邻域\mathring{U}\qquad \sum_{i&#x3D;1}^n\qquad \prod_{j&#x3D;1}^{n}\qquad \sideset{_a^b}{_c^d}\sum<br>$$</p>
+<p>$$<br>\sum_{\substack{0&lt;i&lt;n\0&lt;j&lt;m}}p_{ij}&#x3D;\prod_{\substack{i\in n\1&lt;j&lt;m}}q_{ij}\qquad \max\limits_{i&gt;1}^{x}\quad \mathop{xyz}\limits_{x&gt;0}<br>$$</p>
+<p>$$<br>关于矩阵：\begin{pmatrix}0&amp;1\1&amp;0\end{pmatrix}<br>$$</p>
+<p>$$<br>y&#x3D;\begin{cases}\int x,&amp;x&gt;0 \ 0, &amp;x&#x3D;0\ x-1 ,&amp;x&lt;0 \end{cases},x\in\mathbb{R}<br>$$</p>
+<hr>
+<h3 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h3><p>![理论](&#x2F;Users&#x2F;apple&#x2F;Desktop&#x2F;截屏2021-01-30 16.35.22.png)</p>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>[github](https:<a href="http://www.github.com/">www.github.com</a></p>
+<pre><code class="mermaid">graph TD;
+A--&gt;B;
+B--&gt;C;
+C--&gt;A;
+</code></pre>
 ]]></content>
       <tags>
-        <tag>音乐</tag>
-        <tag>摇滚</tag>
+        <tag>算法</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>我所不能承受的“生命之轻”</title>
-    <url>/2023/12/31/%E6%88%91%E6%89%80%E4%B8%8D%E8%83%BD%E6%89%BF%E5%8F%97%E7%9A%84%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%BB/</url>
-    <content><![CDATA[<p>我的408做的不算快，但也还算从容，离考试结束还有半小时时我便为答卷画上了句号。离考试结束还有五分钟的时候我便开始翘首以盼，等着收卷钟声的敲响。</p>
-<p>那天的夕阳也是我这一年来见过的最美的夕阳，因为当你还在为焦虑、为失眠、为前程忧虑时你是永远无法感受到所谓的美好的。我要在考完初试之后好好体验一下我Steam中积压的库存、我要去紫金山看日出、我要在复试结束后去学吉他、我要……</p>
-<p>当我从考场回到宾馆，我毫不犹豫的先下了那款观望已久的文明6。打开之后本以为是打打杀杀，但是当复杂的规则摆在我面前时我完全放弃了钻研的兴趣。我刚刚考完试我是来放松的不是来学规则的，接着入坑了原神和空洞骑士。原神确实是真的好玩，虽然在之前从来没有真正的玩过，但是“原神，启动”已经是算不上是家喻户晓但是至少也是妇孺皆知。空洞骑士也真很上头，除了跑图跑的是真的累，死亡扣金币扣的也是真的烦。</p>
-<p>接下来的几天虽然也干了点正事，去上了两节课，写了两篇报告，也试着去读两本书。只是报告太少、GPA不再重要、GPT又太重要，以我一贯雷厉飞行的做事风格这点 assignment 并不足挂齿；我也学了点vue，把我的毕设的前端部分完成了一点；我也尝试着去为复试做一点准备，在力扣、AcWing上做点题目。但是空下来的时间还是太多，比起以前遇事不决来套卷子、还有时间要背单词的生活，我突然不知道怎么去安排这些时间，于是变成了遇事不决空洞骑士、还有时间开把原神。</p>
-<p>暑假时我每天早上醒来的第一件事就是打开墨墨刷上几百个单词，现在每天早上醒来的第一件事是打开原神继续跑图。一个月前如果我突然感觉疲惫，我会去喝一杯水然后回来接着和408、数学做搏斗，现在当我打开空洞骑士一眨眼一个小时就悄悄溜走。</p>
-<p>这样的生活我刚开始玩的真的很开心，但是很快我发现<strong>能这样一直游戏人生其实也是需要天赋的</strong>。而我，无论在什么方面都向来平庸，没有干正事的天赋其实也没有什么过花天酒地的生活的天赋。当我这样过到第三天，我就开始感觉游戏带给我的似乎不是快乐，而是<strong>空虚</strong>。去年寒假在家备考的时候偶尔背着自己的良心浪费了二十分钟在神将世界里，我神清气爽；现在我只是机械的打开软件，机械的控制着人物的前进，我真的想打开原神吗？我真的想打开空洞骑士吗？我只是打开了，我只是向前跳、向后跳、放大招，我不知道是我在玩游戏还是游戏在玩我。</p>
-<p>于是在考完的第六天，我知道我不能再继续这样的生活了。我再次踏上了开往市区的地铁，当一次，还是上学期。我去了我想去了很久的地方，去了南京李先生的1701，去他的琴行里摸了摸我买不起的琴，坐在1701咖啡馆看着对面排练的乐队，那天没有演出，没有民谣也没有摇滚。但是半个楚翘城都贴着1701的logo，看来他真的过很好，不知道他还写不写歌了，不知道他还愤不愤怒了，不知道他是否已经知道这个世界会不会好？我又从雨花的1701跑到了下关的热河路。纪念碑旁那家开了很久的电影院早已不知所踪，就连纪念碑也被包围在地铁施工竖起来的围栏之中。我看到32路穿过了挹江门，但是当我想用相机抓拍这一刻时，32路早已消失在夜色。我又去拍了热河路的路牌，我去寻找路边的梧桐树上还有没有歌迷对于这个世界的问候，但是梧桐树上只有零碎的白漆盖掉了不只是谁写下的什么。</p>
-<p>这天我跑的很累，横穿了半个南京。那天我一点钟才睡着，但是不到六点就醒来。听着室友的断断续续的鼾声，我突然开始理解了米兰·昆德拉所说的“不能承受的生命之轻”是什么。当我在焦虑今晚能不能睡得着、明早抢不抢的到图书馆我常坐的位置的时候，我如果没有闹钟可以轻轻松松睡到9点；当我每天逼着自己保证12个小时的学习时间的时候，比起做题我甚至都觉得力扣有点好玩，去浏览Steam最近又有什么折扣简直是享受；当我每天都要在图书馆从早做到晚的时候，觉得去市里遛弯是难得的奢侈，去操场上跑步也成了生活的糖果。但是当这一切真的结束了，当我真的可以从早玩到晚时，我却玩的不痛快、当我真的可以每天睡到9点再起床了我却睡不着了。</p>
-<p>生命需要重量，但是我似乎总在超重和失重之间反复横跳。今天是2023年的最后一天，不到六点苏醒的我像前几天一样在早上醒来时打开了原神，我像前几天一样跑图、打怪，当我在副本中不幸被困之后我选择了退出，卸载应用。我要在今夜去登山，去迎接2024年的第一次日出。我想起疫情时被反复提及的那句话“没有一个冬天不可逾越，没有一个春天不会到来”，今早恰好看到我的一个同学也用这句话为自己的2023做了总结。我想我也许还在人生的冬季，也许冬天又还没有真的到来。但从明天起我要想去寻求不可承受的生命之重和不可承受的生命的受力平衡点。</p>
-]]></content>
   </entry>
   <entry>
     <title>煎饼排序</title>
@@ -935,5 +909,38 @@ int main() &#123;
         <tag>数据结构</tag>
         <tag>栈</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>我所不能承受的“生命之轻”</title>
+    <url>/2023/12/31/%E6%88%91%E6%89%80%E4%B8%8D%E8%83%BD%E6%89%BF%E5%8F%97%E7%9A%84%E7%94%9F%E5%91%BD%E4%B9%8B%E8%BD%BB/</url>
+    <content><![CDATA[<p>我的408做的不算快，但也还算从容，离考试结束还有半小时时我便为答卷画上了句号。离考试结束还有五分钟的时候我便开始翘首以盼，等着收卷钟声的敲响。</p>
+<p>那天的夕阳也是我这一年来见过的最美的夕阳，因为当你还在为焦虑、为失眠、为前程忧虑时你是永远无法感受到所谓的美好的。我要在考完初试之后好好体验一下我Steam中积压的库存、我要去紫金山看日出、我要在复试结束后去学吉他、我要……</p>
+<p>当我从考场回到宾馆，我毫不犹豫的先下了那款观望已久的文明6。打开之后本以为是打打杀杀，但是当复杂的规则摆在我面前时我完全放弃了钻研的兴趣。我刚刚考完试我是来放松的不是来学规则的，接着入坑了原神和空洞骑士。原神确实是真的好玩，虽然在之前从来没有真正的玩过，但是“原神，启动”已经是算不上是家喻户晓但是至少也是妇孺皆知。空洞骑士也真很上头，除了跑图跑的是真的累，死亡扣金币扣的也是真的烦。</p>
+<p>接下来的几天虽然也干了点正事，去上了两节课，写了两篇报告，也试着去读两本书。只是报告太少、GPA不再重要、GPT又太重要，以我一贯雷厉飞行的做事风格这点 assignment 并不足挂齿；我也学了点vue，把我的毕设的前端部分完成了一点；我也尝试着去为复试做一点准备，在力扣、AcWing上做点题目。但是空下来的时间还是太多，比起以前遇事不决来套卷子、还有时间要背单词的生活，我突然不知道怎么去安排这些时间，于是变成了遇事不决空洞骑士、还有时间开把原神。</p>
+<p>暑假时我每天早上醒来的第一件事就是打开墨墨刷上几百个单词，现在每天早上醒来的第一件事是打开原神继续跑图。一个月前如果我突然感觉疲惫，我会去喝一杯水然后回来接着和408、数学做搏斗，现在当我打开空洞骑士一眨眼一个小时就悄悄溜走。</p>
+<p>这样的生活我刚开始玩的真的很开心，但是很快我发现<strong>能这样一直游戏人生其实也是需要天赋的</strong>。而我，无论在什么方面都向来平庸，没有干正事的天赋其实也没有什么过花天酒地的生活的天赋。当我这样过到第三天，我就开始感觉游戏带给我的似乎不是快乐，而是<strong>空虚</strong>。去年寒假在家备考的时候偶尔背着自己的良心浪费了二十分钟在神将世界里，我神清气爽；现在我只是机械的打开软件，机械的控制着人物的前进，我真的想打开原神吗？我真的想打开空洞骑士吗？我只是打开了，我只是向前跳、向后跳、放大招，我不知道是我在玩游戏还是游戏在玩我。</p>
+<p>于是在考完的第六天，我知道我不能再继续这样的生活了。我再次踏上了开往市区的地铁，当一次，还是上学期。我去了我想去了很久的地方，去了南京李先生的1701，去他的琴行里摸了摸我买不起的琴，坐在1701咖啡馆看着对面排练的乐队，那天没有演出，没有民谣也没有摇滚。但是半个楚翘城都贴着1701的logo，看来他真的过很好，不知道他还写不写歌了，不知道他还愤不愤怒了，不知道他是否已经知道这个世界会不会好？我又从雨花的1701跑到了下关的热河路。纪念碑旁那家开了很久的电影院早已不知所踪，就连纪念碑也被包围在地铁施工竖起来的围栏之中。我看到32路穿过了挹江门，但是当我想用相机抓拍这一刻时，32路早已消失在夜色。我又去拍了热河路的路牌，我去寻找路边的梧桐树上还有没有歌迷对于这个世界的问候，但是梧桐树上只有零碎的白漆盖掉了不只是谁写下的什么。</p>
+<p>这天我跑的很累，横穿了半个南京。那天我一点钟才睡着，但是不到六点就醒来。听着室友的断断续续的鼾声，我突然开始理解了米兰·昆德拉所说的“不能承受的生命之轻”是什么。当我在焦虑今晚能不能睡得着、明早抢不抢的到图书馆我常坐的位置的时候，我如果没有闹钟可以轻轻松松睡到9点；当我每天逼着自己保证12个小时的学习时间的时候，比起做题我甚至都觉得力扣有点好玩，去浏览Steam最近又有什么折扣简直是享受；当我每天都要在图书馆从早做到晚的时候，觉得去市里遛弯是难得的奢侈，去操场上跑步也成了生活的糖果。但是当这一切真的结束了，当我真的可以从早玩到晚时，我却玩的不痛快、当我真的可以每天睡到9点再起床了我却睡不着了。</p>
+<p>生命需要重量，但是我似乎总在超重和失重之间反复横跳。今天是2023年的最后一天，不到六点苏醒的我像前几天一样在早上醒来时打开了原神，我像前几天一样跑图、打怪，当我在副本中不幸被困之后我选择了退出，卸载应用。我要在今夜去登山，去迎接2024年的第一次日出。我想起疫情时被反复提及的那句话“没有一个冬天不可逾越，没有一个春天不会到来”，今早恰好看到我的一个同学也用这句话为自己的2023做了总结。我想我也许还在人生的冬季，也许冬天又还没有真的到来。但从明天起我要想去寻求不可承受的生命之重和不可承受的生命的受力平衡点。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我们应该面向谁歌唱</title>
+    <url>/2024/01/22/%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E9%9D%A2%E5%90%91%E8%B0%81%E6%AD%8C%E5%94%B1/</url>
+    <content><![CDATA[<h2 style="text-align = right ">——腰乐队</h2>
+![相见恨晚](/image/相见恨晚.jpeg)
+
+]]></content>
+      <tags>
+        <tag>音乐</tag>
+        <tag>摇滚</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于南京我想的全是你</title>
+    <url>/2024/05/30/%E5%85%B3%E4%BA%8E%E5%8D%97%E4%BA%AC%E6%88%91%E6%83%B3%E7%9A%84%E5%85%A8%E6%98%AF%E4%BD%A0/</url>
+    <content><![CDATA[<h1 id="关于南京我想的全是你"><a href="#关于南京我想的全是你" class="headerlink" title="关于南京我想的全是你"></a>关于南京我想的全是你</h1><p>我听过一个说法，说一个人十四岁听的音乐会影响他的一生。那我很庆幸，因为14岁的时候我没有手机也没有随身听，音乐在我的生活当中缺席，可能那时和音乐最多的接触是当时路对面有家超市每天喇叭相当扰民，我只觉得聒噪，因为影响我专心写作业。</p>
+<p>也正是因为14岁时音乐在生活当中的缺失，当我在上大学之后，开始每天带着耳机高强度的听歌时，我偏爱的音乐风格没有被定义过，14岁没有给我留下我应该偏爱音乐的样板，我便能被各种音乐打动。我大一的时候喜欢那些几乎所有人都能哼上几句的流行乐，林俊杰、莫文蔚还有周杰伦，尤其是周杰伦，在大一我几乎把周杰伦的每一张专辑都循环播放了无数遍，二稻香那首歌，在那一年被我单曲循环了二百多遍，“还记得你说家是唯一的城堡，随着稻香河流继续奔跑，回家吧，回到最初的美好”，那温暖的旋律陪伴我度过了那段灰心丧气的时光。在大二的时候开始更偏爱那些充满人文情怀的也在歌词上更具有文学性的民谣，从赵雷的小酒馆到宋冬野的安河桥，还有周云鹏辽阔的草原。也正是在那一年将要画上尾声的时候，我听到了《你离开了南京，从此没人和我说话》</p>
+]]></content>
   </entry>
 </search>
